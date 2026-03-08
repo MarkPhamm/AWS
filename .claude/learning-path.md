@@ -14,10 +14,10 @@
 - [ ] S3 bucket policies and IAM permissions
 
 ## Phase 3: OIDC + CI/CD (so GitHub Actions can deploy to S3)
-- [ ] IAM fundamentals - users, roles, policies
-- [ ] What is OIDC (OpenID Connect) and why use it for CI/CD?
-- [ ] IAM OIDC Identity Provider for GitHub Actions (Terraform)
-- [ ] IAM Role with trust policy for GitHub Actions (Terraform)
+- [x] IAM fundamentals - users, roles, policies
+- [x] What is OIDC (OpenID Connect) and why use it for CI/CD?
+- [x] IAM OIDC Identity Provider for GitHub Actions (Terraform)
+- [x] IAM Role with trust policy for GitHub Actions (Terraform) → role: github-actions-deploy
 - [ ] Testing: GitHub Actions assuming the role and syncing to S3
 
 ## Phase 4: MWAA (depends on S3 + networking)
@@ -41,5 +41,5 @@
 - [ ] Cost management and tagging strategies
 
 ## Current Status
-- **Current phase**: Not started
-- **Last topic covered**: N/A
+- **Current phase**: Phase 3 (OIDC + CI/CD) - testing remaining
+- **Last topic covered**: IAM role + OIDC provider created with Terraform

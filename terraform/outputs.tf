@@ -12,3 +12,8 @@ output "mwaa_bucket_arn" {
   description = "The ARN of the S3 bucket for MWAA"
   value       = aws_s3_bucket.mwaa.arn
 }
+
+output "github_actions_role_arn" {
+  description = "The ARN of the IAM role for GitHub Actions (put this in deploy.yml)"
+  value       = aws_iam_role.github_actions_deploy.arn
+}

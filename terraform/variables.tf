@@ -22,3 +22,9 @@ variable "aws_account_id" {
   type        = string
   default     = "203110101827"
 }
+
+variable "github_repo" {
+  description = "GitHub repo that is allowed to assume the deploy role (format: owner/repo-name)"
+  type        = string
+  default     = "MarkPhamm/airflow_mwaa_CICD"
+}
