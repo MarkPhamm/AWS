@@ -30,6 +30,14 @@ resource "aws_s3_bucket" "mwaa" {
     #   - They help you find and filter resources in the console
     #   - They show up in billing so you know what costs what
   }
+
+  lifecycle {
+    prevent_destroy = true
+    # ↑ Terraform will REFUSE to delete this bucket.
+    #   If you run `terraform destroy`, everything else gets deleted
+    #   but this bucket stays. Protects your DAGs and requirements.
+    #   To actually delete it, you'd have to remove this block first.
+  }
 }
 
 

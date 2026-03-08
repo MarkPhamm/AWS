@@ -23,8 +23,20 @@ variable "aws_account_id" {
   default     = "203110101827"
 }
 
+variable "aws_region" {
+  description = "AWS region to deploy resources in"
+  type        = string
+  default     = "us-east-1"
+}
+
 variable "github_repo" {
   description = "GitHub repo that is allowed to assume the deploy role (format: owner/repo-name)"
   type        = string
   default     = "MarkPhamm/airflow_mwaa_CICD"
+}
+
+variable "mwaa_environment_name" {
+  description = "Name of the MWAA environment (must match MWAA_NAME in deploy.yml)"
+  type        = string
+  default     = "mwaa-environment"
 }
