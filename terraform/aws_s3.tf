@@ -15,15 +15,15 @@
 # bucket = the actual name in AWS (must be globally unique)
 
 resource "aws_s3_bucket" "mwaa" {
-  bucket = "${var.project_name}-${var.aws_account_id}"
+  bucket = "${var.mwaa_project_name}-${var.aws_account_id}"
   # ↑ This becomes: "airflow-mwaa-203110101827"
   #
-  # ${var.project_name} = pulls the value from variables.tf → "airflow-mwaa"
+  # ${var.mwaa_project_name} = pulls the value from variables.tf → "airflow-mwaa"
   # ${var.aws_account_id} = pulls the value from variables.tf → "203110101827"
   # "${...}" = string interpolation (like f-strings in Python or template literals in JS)
 
   tags = {
-    Name        = "${var.project_name}-bucket"
+    Name        = "${var.mwaa_project_name}-bucket"
     Environment = var.environment
     # ↑ Tags are labels you attach to AWS resources
     #   - They don't change how the resource works

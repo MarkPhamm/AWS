@@ -16,7 +16,7 @@
 #   - airflow-env.amazonaws.com  = the Airflow environment running inside MWAA
 
 resource "aws_iam_role" "mwaa_execution" {
-  name = "${var.project_name}-mwaa-execution-role"
+  name = "${var.mwaa_project_name}-mwaa-execution-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -35,7 +35,7 @@ resource "aws_iam_role" "mwaa_execution" {
   })
 
   tags = {
-    Name        = "${var.project_name}-mwaa-execution-role"
+    Name        = "${var.mwaa_project_name}-mwaa-execution-role"
     Environment = var.environment
   }
 }

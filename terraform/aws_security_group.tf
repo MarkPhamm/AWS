@@ -10,12 +10,12 @@
 # MWAA's scheduler, workers, and web server all share this group.
 
 resource "aws_security_group" "mwaa" {
-  name        = "${var.project_name}-mwaa-sg"
+  name        = "${var.mwaa_project_name}-mwaa-sg"
   description = "Security group for MWAA environment"
   vpc_id      = aws_vpc.mwaa.id
 
   tags = {
-    Name        = "${var.project_name}-mwaa-sg"
+    Name        = "${var.mwaa_project_name}-mwaa-sg"
     Environment = var.environment
   }
 }

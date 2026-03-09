@@ -6,8 +6,14 @@
 #   - You can override them without changing any code
 
 variable "project_name" {
-  description = "A name to tag all resources with, so you know what they belong to"
-  type        = string # Can be: string, number, bool, list, map
+  description = "General project name for shared resources (VPC, EC2, etc.)"
+  type        = string
+  default     = "aws-learning"
+}
+
+variable "mwaa_project_name" {
+  description = "Project name for MWAA-specific resources (S3, IAM role, security group)"
+  type        = string
   default     = "airflow-mwaa"
 }
 
@@ -33,6 +39,12 @@ variable "github_repo" {
   description = "GitHub repo that is allowed to assume the deploy role (format: owner/repo-name)"
   type        = string
   default     = "MarkPhamm/airflow_mwaa_CICD"
+}
+
+variable "ec2_public_key" {
+  description = "Public key for SSH access to EC2 (run: ssh-keygen -t ed25519 -f ~/.ssh/aws-ec2-key, then paste the .pub content here)"
+  type        = string
+  default     = ""
 }
 
 variable "mwaa_environment_name" {
