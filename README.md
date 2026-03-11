@@ -83,7 +83,8 @@ docs/aws/           AWS service reference docs
 4. [Terraform Basics](docs/04-terraform-basics.md)
 5. [Terraform S3 Syntax Breakdown](docs/05-terraform-aws-s3.md)
 6. [Terraform OIDC Provider Breakdown](docs/06-terraform-aws-iam-oidc.md)
-  7. [Terraform IAM Role Breakdown](docs/07-terraform-aws-iam-role.md)
+7. [Terraform IAM Role Breakdown](docs/07-terraform-aws-iam-role.md)
+8. [Terraform EC2 Syntax Breakdown](docs/08-terraform-aws-ec2.md)
 
 ## Related Project
 
