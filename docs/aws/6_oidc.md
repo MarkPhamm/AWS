@@ -78,7 +78,7 @@ No AWS keys stored in GitHub. The role's trust policy restricts access to a spec
 ## Terraform Resources
 
 | Resource | Purpose |
-|----------|---------|
+| ---------- | --------- |
 | `aws_iam_openid_connect_provider` | Register GitHub as a trusted identity provider |
 | `aws_iam_role` (with OIDC trust policy) | Role that GitHub Actions can assume |
 

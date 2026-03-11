@@ -18,7 +18,7 @@ MWAA is AWS's managed version of Apache Airflow. You provide DAGs in S3, and AWS
 ### Environment Classes
 
 | Class | Scheduler | Workers | Cost/hr |
-|-------|-----------|---------|---------|
+| ------- | ----------- | --------- | --------- |
 | `mw1.small` | 1 (2 vCPU, 2 GB) | 1-5 (1 vCPU, 1 GB each) | ~$0.049 |
 | `mw1.medium` | 1 (2 vCPU, 4 GB) | 1-10 (2 vCPU, 2 GB each) | ~$0.098 |
 | `mw1.large` | 1 (4 vCPU, 8 GB) | 1-20 (4 vCPU, 4 GB each) | ~$0.196 |
@@ -26,7 +26,7 @@ MWAA is AWS's managed version of Apache Airflow. You provide DAGs in S3, and AWS
 ### Web Server Access
 
 | Mode | Who can access | How |
-|------|---------------|-----|
+| ------ | --------------- | ----- |
 | `PUBLIC_ONLY` | Anyone with the URL + IAM credentials | Through the internet |
 | `PRIVATE_ONLY` | Only from within the VPC | Need VPN or bastion host |
 
@@ -44,6 +44,7 @@ S3 Bucket (DAGs, requirements.txt, plugins.zip)
 ```
 
 Required infrastructure:
+
 - **VPC** with 2 private subnets in different AZs
 - **NAT Gateway** for outbound internet (pip install, AWS APIs)
 - **Security group** with self-referencing inbound (components talk to each other)
@@ -63,7 +64,7 @@ GitHub → CI/CD (OIDC) → S3 Bucket → MWAA reads DAGs
 ## Terraform Resources
 
 | Resource | File | Purpose |
-|----------|------|---------|
+| ---------- | ------ | --------- |
 | `aws_mwaa_environment` | `aws_mwaa.tf` | The Airflow environment |
 | `aws_iam_role.mwaa_execution` | `aws_iam_mwaa.tf` | Execution role |
 | `aws_iam_role_policy.mwaa_policy` | `aws_iam_mwaa.tf` | Permissions for the role |
@@ -72,7 +73,7 @@ GitHub → CI/CD (OIDC) → S3 Bucket → MWAA reads DAGs
 ## Cost
 
 | Resource | Cost |
-|----------|------|
+| ---------- | ------ |
 | MWAA mw1.small | ~$0.049/hr (~$35/month) |
 | NAT Gateway | ~$0.045/hr (~$32/month) |
 | S3 storage | ~$0 (DAGs are tiny) |

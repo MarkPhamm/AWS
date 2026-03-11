@@ -48,7 +48,7 @@ Random EC2 (different SG) → MWAA Worker ← blocked
 ### Common Port Numbers
 
 | Port | Service | When you'd use it |
-|------|---------|-------------------|
+| ------ | --------- | ------------------- |
 | 22 | SSH | Remote terminal access |
 | 80 | HTTP | Web server (unencrypted) |
 | 443 | HTTPS | Web server (encrypted) |
@@ -59,14 +59,14 @@ Random EC2 (different SG) → MWAA Worker ← blocked
 ## Our Security Groups
 
 | Security Group | Inbound | Outbound | Used by |
-|---------------|---------|----------|---------|
+| --------------- | --------- | ---------- | --------- |
 | `ec2-sg` | SSH (22), HTTP (80) from anywhere | All traffic | EC2 instance |
 | `mwaa-sg` | All traffic from self | All traffic | MWAA environment |
 
 ## Terraform Resources
 
 | Resource | Purpose |
-|----------|---------|
+| ---------- | --------- |
 | `aws_security_group` | Create the security group (name, VPC, description) |
 | `aws_security_group_rule` | Add individual inbound/outbound rules |
 

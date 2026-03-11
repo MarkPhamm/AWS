@@ -1,4 +1,4 @@
-# 10 - Terraform IAM Role Syntax Breakdown
+# 07 - Terraform IAM Role Syntax Breakdown
 
 This is a line-by-line breakdown of `terraform/aws_iam_role.tf`.
 

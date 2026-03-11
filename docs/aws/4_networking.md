@@ -20,7 +20,7 @@ A VPC (Virtual Private Cloud) is your own isolated network inside AWS. All your 
 ### Public vs Private Subnets
 
 | | Public Subnet | Private Subnet |
-|---|--------------|----------------|
+| --- | --- | --- |
 | Internet access | Direct (via Internet Gateway) | Outbound only (via NAT Gateway) |
 | Reachable from internet? | Yes (if security group allows) | No |
 | Gets public IP? | Yes (`map_public_ip_on_launch`) | No |
@@ -56,7 +56,7 @@ Internet → NAT Gateway → ✗ blocked (NAT is one-way outbound)
 Every subnet is associated with a route table. Two rules matter:
 
 | Destination | Target | Meaning |
-|-------------|--------|---------|
+| --- | --- | --- |
 | `10.0.0.0/16` | `local` | Traffic within the VPC stays in the VPC |
 | `0.0.0.0/0` | `igw-xxx` or `nat-xxx` | Everything else goes to IGW (public) or NAT (private) |
 
@@ -74,7 +74,7 @@ VPC: 10.0.0.0/16
 ## Terraform Resources
 
 | Resource | Purpose |
-|----------|---------|
+| --- | --- |
 | `aws_vpc` | The VPC itself |
 | `aws_subnet` (x4) | 2 public + 2 private subnets |
 | `aws_internet_gateway` | VPC's connection to the internet |
@@ -88,7 +88,7 @@ All defined in `aws_vpc.tf`.
 ## Cost
 
 | Resource | Cost |
-|----------|------|
+| ---------- | ------ |
 | VPC, subnets, IGW, route tables | Free |
 | NAT Gateway | ~$0.045/hr (~$32/month) |
 | Elastic IP (while attached to NAT) | Free |

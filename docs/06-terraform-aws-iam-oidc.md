@@ -1,4 +1,4 @@
-# 09 - Terraform OIDC Provider Syntax Breakdown
+# 06 - Terraform OIDC Provider Syntax Breakdown
 
 This is a line-by-line breakdown of `terraform/aws_iam_oidc.tf`.
 

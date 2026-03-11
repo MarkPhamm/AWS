@@ -82,8 +82,8 @@ docs/aws/           AWS service reference docs
 3. [AWS CLI & Terraform Setup](docs/03-aws-cli-terraform-setup.md)
 4. [Terraform Basics](docs/04-terraform-basics.md)
 5. [Terraform S3 Syntax Breakdown](docs/05-terraform-aws-s3.md)
-6. [Terraform OIDC Provider Breakdown](docs/09-terraform-aws-iam-oidc.md)
-7. [Terraform IAM Role Breakdown](docs/10-terraform-aws-iam-role.md)
+6. [Terraform OIDC Provider Breakdown](docs/06-terraform-aws-iam-oidc.md)
+  7. [Terraform IAM Role Breakdown](docs/07-terraform-aws-iam-role.md)
 
 ## Related Project
 
